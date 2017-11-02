@@ -10,9 +10,9 @@ except Exception as e:
     print('Error' + str(e))
     sys.exit()
 
-ans = s.recv(1024)
+banner = s.recv(1024).decode()
 
-if ("vsFTPd 3.0.3".encode() in ans):
+if ("vsFTPd 3.0.3" in banner):
     print ("[+] vsFTPd.")
 else:
     print ("[-] FTP Server is not vulnerable.")

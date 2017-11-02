@@ -10,6 +10,10 @@ def retBanner(ip, port):
     except:
         return 'error'
 
+def checkVulns(banner):
+    if "vsFTPd 3.0.3" in banner:
+        return "vsFTPd is vulnerable"
+
 def main():
     ip1 = 'localhost'
     ip2 = '127.0.0.1'
