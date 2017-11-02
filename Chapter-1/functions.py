@@ -6,17 +6,17 @@ def retBanner(ip, port):
         s = socket.socket()
         s.connect((ip,port))
         banner = s.recv(1024)
-        return banner
+        return banner.decode().strip('\n')
     except:
-        return
+        return 'error'
 
 def main():
     ip1 = 'localhost'
     ip2 = '127.0.0.1'
     port = 21
 
-    print(ip1 + ': ' + retBanner(ip1, port).decode())
-    print(ip2 + ': ' + retBanner(ip2, port).decode())
+    print(ip1 + ': ' + retBanner(ip1, port))
+    print(ip2 + ': ' + retBanner(ip2, port))
 
 if __name__ == '__main__':
     main()
