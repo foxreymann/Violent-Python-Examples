@@ -34,8 +34,8 @@ def main():
         exit(0)
 
     ports = [21, 22, 80]
-    for host in range(109, 112):
-        ip = '100.109.237.' + str(host)
+    for host in range(77, 79):
+        ip = '192.168.1.' + str(host)
         for port in ports:
             banner = retBanner(ip, port)
             if banner:
