@@ -17,13 +17,14 @@ def checkVulns(banner):
         return "FTP Server is not vulnerable"
 
 def main():
-    ports = [22, 80]
-    for host in range(105, 115):
+    ports = [21, 22, 80]
+    for host in range(109, 112):
         ip = '100.109.237.' + str(host)
         for port in ports:
             banner = retBanner(ip, port)
             if banner:
-                print(ip + ':' + port + ': ' + banner)
+                print(ip + ':' + str(port) + ': ' + banner)
+                print(checkVulns(banner))
 
 if __name__ == '__main__':
     main()
